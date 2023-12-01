@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+background-color: lightgreen;
+color: blue;
+text-align: center;
+font-size: 3rem;
+}
+
+input{
+font-size:1.5rem;
+padding: 1rem;
+border: .5rem solid blue; 
+}
+.buttons{
+margin-top: 3rem;
+}
+
+button{
+font-size:1rem;
+padding: 1rem;
+color: blue;
+cursor: pointer;
+}   
+
+</style>
+
+<body>
+<h2>Javascript Basic Calculator</h2>
+
+<section>
+<div class="input">
+<input type="number" id="inputOne" placeholder="Value 1">
+
+<input type="number" id="inputTwo"  
+
+placeholder="Value 2">
+
+</div>
+<div class="buttons">
+<button id="add" onclick="add()">ADD(+)</button>
+<button id="subtract" onclick="subtract()">SUBTRACT(-)</button>
+<button id="division" onclick="division()">DIVISTION(/)</button>
+<button id="multipication" onclick="multipication()">MULTIPICATION(X)</button>
+
+</div>
+<div class="result">
+<h3>Result: <span id="result">0</span></h3>    
+</div>
+</section>
+
+<script>
+const inputOne = document.getElementById("inputOne");
+const inputTwo = document.getElementById("inputTwo");
+
+const result = document.getElementById("result");
+
+function add(){
+if (inputOne.value && inputTwo.value){
+let add = parseInt (inputOne.value) + parseInt (inputTwo.value);
+result.innerHTML = add;
+}else{
+alert ("plese enter value");   
+}
+}
+
+
+function subtract(){
+if(inputOne.value && inputTwo.value){  
+let subtract = parseInt (inputOne.value) - parseInt (inputTwo.value);
+result.innerHTML = subtract;
+}
+else{alert("plese enter value")}
+}
+
+function division() {
+if(inputOne.value && inputTwo){  
+let division = parseInt (inputOne.value) / parseInt (inputTwo.value)
+result.innerHTML = division.toFixed(2);
+}
+else{alert("please enter valur")
+}
+}
+
+function multipication() {
+if(inputOne.value && inputTwo.value) {   
+let multipication = parseInt (inputOne.value) * parseInt (inputTwo.value)
+result.innerHTML = multipication;
+}else{alert("please enter value");
+}
+
+}
+</script>
+
+</body>
+
+</html>
